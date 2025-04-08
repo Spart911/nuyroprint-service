@@ -1,0 +1,96 @@
+/* Existing styles with mobile optimization */
+.not-defect-content {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 200px);
+    align-items: center;
+    padding: 0 35vw; /* Add padding for smaller screens */
+}
+
+
+.hh1 {
+    font-size: 48px;
+    color: black;
+    text-align: center;
+}
+
+.not-defect-button {
+    background-color: #EBF0EB;
+    color: #61875E;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 20px 25px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 490px;
+    margin-top: 20px;
+}
+
+.content2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) { 
+    .not-defect-content {
+        height: auto;
+        min-height: 100vh;
+        padding: 0 20vw;
+    }
+
+    .hh1 {
+        font-size: 24px;
+    }
+
+    .result-evaluation-title {
+        font-size: 18px;
+    }
+
+    .rating-scale {
+        gap: 5px; /* Reduce gap on smaller screens */
+    }
+
+    .rating-circle {
+        max-width: 45px;
+        max-height: 45px;
+        min-width: 35px;
+        min-height: 35px;
+        font-size: 16px;
+    }
+
+    .not-defect-button {
+        width: 100%; /* Full width on mobile */
+        max-width: 320px;
+        font-size: 14px;
+        padding: 15px 20px;
+    }
+
+    .rating-labels {
+        font-size: 12px;
+    }
+}
+
+/* Tablet Optimization */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .hh1 {
+        font-size: 36px;
+    }
+
+    .not-defect-button {
+        width: 100%;
+        max-width: 490px;
+        font-size: 16px;
+    }
+
+    .rating-circle {
+        max-width: 50px;
+        max-height: 50px;
+    }
+}
