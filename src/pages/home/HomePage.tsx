@@ -9,10 +9,10 @@ import logo2 from "@/shared/img/5e356d6acc3937c43a6f01722f09743d 1.png";
 import logo3 from "@/shared/img/kvantorim-2048x772-transformed 1.png";
 import logo4 from "@/shared/img/logo_ff.png";
 import img1 from "@/shared/img/3.jpg";
-import img2 from"@/shared/img/1.jpeg";
+import img2 from "@/shared/img/1.jpeg";
 import { useState } from "react";
-//@ts-ignore
 import { Analytics } from "@vercel/analytics/react";
+//@ts-ignore
 import { Helmet } from "react-helmet";
 
 function HomePage() {
@@ -127,9 +127,8 @@ function HomePage() {
                 />
               </div>
             </section>
-
-            
-              <div className="text-2block">Проект разработан при участии</div>
+            <div>
+              <h2 className="accordion-t">Проект разработан при участии</h2>
               <div className="carousel-section1">
                 <div className="logo-container2">
                   <div>
@@ -158,80 +157,88 @@ function HomePage() {
                   </div>
                 </div>
               </div>
-              
-              <div className="accordion">
-                <h2 className="accordion-t">Часто задаваемые вопросы</h2>
-                {[
-                  {
-                    title: "Как наш продукт сокращает трудозатраты и время?",
-                    content:
-                      "Каждый раз, когда вы меняете оборудование или материал, вы тратите время на доводку и настройку. Наша нейросеть помогает отпечатать всего лишь одну тестовую модель и сделать одно фото, чтобы по фото определить дефект, и подобрать правильные настройки к вашему оборудованию.",
-                  },
-                  {
-                    title: "Как мы остаемся конкурентоспособными?",
-                    content:
-                      "Наш продукт остаётся конкурентоспособным благодаря тому, что мы выставляем честную цену на работу нейронной сети, благодаря собственным вычислительным мощностям.",
-                  },
-                  {
-                    title: "Можно ли с нами сотрудничать?",
-                    content:
-                      'Мы всегда готовы к сотрудничеству, в любом направлении, можете связаться с нами на вкладке "Обратная связь", расположенной внизу страницы. Наша команда всегда рада новым предложениям и сотрудничеству.',
-                  },
-                  {
-                    title: "От чего зависит стоимость конечного сервиса?",
-                    content:
-                      "Стоимость конечного сервиса зависит от времени работы нейронной сети на наших мощностях, как и от электроэнергии. ",
-                  },
-                  {
-                    title: "Кто и как основал NeuroPrint?",
-                    content:
-                      "Мы команда из студентов Южного федерального университета и Донского государственного технического университета, которые заинтересованы в развитии аддитивных технологий и машинного обучения.",
-                  },
-                ].map((item, index) => (
+            </div>
+
+            <div className="accordion">
+              <h2 className="accordion-t">Часто задаваемые вопросы</h2>
+              {[
+                {
+                  title: "Как наш продукт сокращает трудозатраты и время?",
+                  content:
+                    "Каждый раз, когда вы меняете оборудование или материал, вы тратите время на доводку и настройку. Наша нейросеть помогает отпечатать всего лишь одну тестовую модель и сделать одно фото, чтобы по фото определить дефект, и подобрать правильные настройки к вашему оборудованию.",
+                },
+                {
+                  title: "Как мы остаемся конкурентоспособными?",
+                  content:
+                    "Наш продукт остаётся конкурентоспособным благодаря тому, что мы выставляем честную цену на работу нейронной сети, благодаря собственным вычислительным мощностям.",
+                },
+                {
+                  title: "Можно ли с нами сотрудничать?",
+                  content:
+                    'Мы всегда готовы к сотрудничеству, в любом направлении, можете связаться с нами на вкладке "Обратная связь", расположенной внизу страницы. Наша команда всегда рада новым предложениям и сотрудничеству.',
+                },
+                {
+                  title: "От чего зависит стоимость конечного сервиса?",
+                  content:
+                    "Стоимость конечного сервиса зависит от времени работы нейронной сети на наших мощностях, как и от электроэнергии. ",
+                },
+                {
+                  title: "Кто и как основал NeuroPrint?",
+                  content:
+                    "Мы команда из студентов Южного федерального университета и Донского государственного технического университета, которые заинтересованы в развитии аддитивных технологий и машинного обучения.",
+                },
+              ].map((item, index) => (
+                <div
+                  className="accordion-item"
+                  key={index}
+                >
                   <div
-                    className="accordion-item"
-                    key={index}
+                    className="accordion-title"
+                    onClick={() => onTitleClick(index)}
                   >
-                    <div
-                      className="accordion-title"
-                      onClick={() => onTitleClick(index)}
-                    >
-                      <h2>{item.title}</h2>
-                      <i
-                        className={`accordion-icon fas fa-chevron-down ${
-                          index === activeIndex ? "open" : ""
-                        }`}
-                      ></i>
-                    </div>
-                    <div
-                      className={`accordion-content ${
-                        index === activeIndex ? "active" : ""
+                    <h2>{item.title}</h2>
+                    <i
+                      className={`accordion-icon fas fa-chevron-down ${
+                        index === activeIndex ? "open" : ""
                       }`}
-                    >
-                      <p>{item.content}</p>
-                    </div>
+                    ></i>
                   </div>
-                ))}
-              </div>
+                  <div
+                    className={`accordion-content ${
+                      index === activeIndex ? "active" : ""
+                    }`}
+                  >
+                    <p>{item.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-              <div className="text-2block">Работа выполнена при поддержке гранта Фонда содействия инновациям, предоставленного в рамках программы «Студенческий стартап» федерального проекта «Платформа университетского технологического предпринимательства»</div>
+            <div className="text-2block">
+              Работа выполнена при поддержке гранта Фонда содействия инновациям,
+              предоставленного в рамках программы «Студенческий стартап»
+              федерального проекта «Платформа университетского технологического
+              предпринимательства»
+            </div>
 
-              <div className="fsi-logo-container" style={{ 
-                display: 'flex', 
-                justifyContent: 'center', 
-                marginTop: '5px', 
-                marginBottom: '60px' 
-              }}>
-                <img 
-                  src={logo_FSI} 
-                  alt="Логотип FSI" 
-                  style={{ 
-                    width: '30%', 
-                    height: 'auto' 
-                  }} 
-                />
-              </div>
-
+            <div
+              className="fsi-logo-container"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "5px",
+                marginBottom: "60px",
+              }}
+            >
+              <img
+                src={logo_FSI}
+                alt="Логотип FSI"
+                style={{
+                  width: "30%",
+                  height: "auto",
+                }}
+              />
+            </div>
           </div>
         </main>
       </div>

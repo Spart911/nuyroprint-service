@@ -42,7 +42,7 @@
   .logo {
     width: 50px;
     height: 50px;
-    background-image: url('logo.ico'); /* Указываем путь к логотипу */
+    background-image: url('./logo.ico'); /* Указываем путь к логотипу */
     background-size: cover; /* Растягиваем изображение на всю площадь */
     background-position: center; /* Центрируем изображение */
     margin-right: 10px;
